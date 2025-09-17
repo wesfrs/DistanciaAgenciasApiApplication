@@ -12,14 +12,10 @@ class AgenciaTest {
         double invalido = Double.NaN;
         double valido = 10.0;
 
-        IllegalArgumentException ex1 = assertThrows(IllegalArgumentException.class, () -> {
-            new Agencia(nome, invalido, valido);
-        });
+        IllegalArgumentException ex1 = assertThrows(IllegalArgumentException.class, () -> new Agencia(nome, invalido, valido));
         assertEquals("Coordenadas inconsistentes ou inválidas", ex1.getMessage());
 
-        IllegalArgumentException ex2 = assertThrows(IllegalArgumentException.class, () -> {
-            new Agencia(nome, valido, invalido);
-        });
+        IllegalArgumentException ex2 = assertThrows(IllegalArgumentException.class, () -> new Agencia(nome, valido, invalido));
         assertEquals("Coordenadas inconsistentes ou inválidas", ex2.getMessage());
     }
 
